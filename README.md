@@ -11,7 +11,7 @@ Projeto de Automação de testes E2E e Api.
 * Clone o projeto em sua maquina.
 
 ```
-git clone https://github.com/juliosantosjob/Vr-Tests-Functions.git
+git clone https://github.com/juliosantosjob/VR-Tests-Functions.git
 ```
 
 * Com o NodeJs instalado rode o comando a baixo para instalar as dependências do projeto
