@@ -1,0 +1,15 @@
+Validações no site VR
+
+URL site: https://www.vr.com.br
+URL api: https://portal.vr.com.br
+
+Cenário: Acessando o mapa de busca para estabelecimentos
+Dado que o usuário acesse o site VR
+Quando ele navegar até a sessão "pra você"
+E selecionar a opção "onde usar meu VR?"
+Então exibe na tela o mapa de busca para estabelecimentos mais próximos que aceitem VR
+
+Cenário: Buscando a chave "typeOfEstablishment"
+Dado uma solicitação do tipo GET para a rota "/api-web/comum/enumerations/VRPAT"
+Então a api retorna o status code 200
+E no response da chamada a chave "typeOfEstablishment"
