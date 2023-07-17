@@ -7,7 +7,7 @@ export default defineConfig({
   use: {
     baseURL: 'https://www.vr.com.br',
     trace: 'on-first-retry',
-    headless: false
+    headless: true
   },
 
   projects: [
