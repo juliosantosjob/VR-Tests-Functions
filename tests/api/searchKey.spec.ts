@@ -26,7 +26,7 @@ test.describe('Testes de servico na VR', () => {
     console.log('Um novo estabelecimento: ', responseBody.typeOfEstablishment[r].name);
   });
 
-  test.skip('Buscando pela chave "dominios"', async ({ request }) => {
+  test('Buscando pela chave "dominios"', async ({ request }) => {
     const r: number = getRandomNumber(0, 26);
 
     expect(response).toBeOK();
