@@ -7,13 +7,14 @@ test.describe('Testes de servico na VR', () => {
   const route: string = '/api-web/comum/enumerations/VRPAT';
   let response: APIResponse;
 
+  test.beforeEach(async () => { 
+      response = await request.get(url_Portal + route);
+      const responseBody = JSON.parse(await response.text());
+  });
+  
   test('Imprimindo um novo estabelecimento pela chave "typeOfEstablishment"', async ({ request }) => {
     const r: number = getRandomNumber(0, 56);
 
-    response = await request.get(url_Portal + route);
-    const responseBody = JSON.parse(await response.text());
-
-    console.log('Um novo estabelecimento: ', responseBody.typeOfEstablishment[r].name);
     expect(response).toBeOK();
     expect(response).toBeTruthy();
     expect(response.status()).toBe(200);
@@ -21,13 +22,12 @@ test.describe('Testes de servico na VR', () => {
     expect(responseBody.typeOfEstablishment[r].key).toEqual(typeOfEstablishment[r].key);
     expect(responseBody.typeOfEstablishment[r].name).toEqual(typeOfEstablishment[r].name);
     expect(responseBody.typeOfEstablishment[r].label).toEqual(typeOfEstablishment[r].label);
+
+    console.log('Um novo estabelecimento: ', responseBody.typeOfEstablishment[r].name);
   });
 
   test.skip('Buscando pela chave "dominios"', async ({ request }) => {
     const r: number = getRandomNumber(0, 26);
-
-    response = await request.get(url_Portal + route);
-    const responseBody = JSON.parse(await response.text());
 
     expect(response).toBeOK();
     expect(response).toBeTruthy();
