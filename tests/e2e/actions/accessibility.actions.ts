@@ -5,7 +5,9 @@ export class AccessibilityActions extends AccessibilityPage {
 
     async go() {
         await this.page.goto('/');
-        await expect(this.page).toHaveTitle('VR Benefícios - Vale Refeição, Vale Alimentação e Transporte');
+        await expect(this.page).toHaveTitle(
+            'VR Benefícios - Vale Refeição, Vale Alimentação e Transporte'
+        );
     }
 
     async tapWhereToUse() {

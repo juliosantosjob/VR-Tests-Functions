@@ -1,16 +1,16 @@
-import { test } from '@playwright/test';
 import { AccessibilityActions } from '../actions/accessibility.actions';
+import { test } from '@playwright/test';
 
 test.describe('Acessibilidade no website VR', () => {
-  let acsPgs: AccessibilityActions;
-  
-  test.beforeEach(async ({ page }) => { 
-    acsPgs = new AccessibilityActions(page); 
+  let actions: AccessibilityActions;
+
+  test.beforeEach(async ({ page }) => {
+    actions = new AccessibilityActions(page);
   });
 
   test('Acessando o mapa de busca para estabelecimentos', async () => {
-    await acsPgs.go();
-    await acsPgs.tapWhereToUse();
-    await acsPgs.viewMap();
+    await actions.go();
+    await actions.tapWhereToUse();
+    await actions.viewMap();
   });
 });
