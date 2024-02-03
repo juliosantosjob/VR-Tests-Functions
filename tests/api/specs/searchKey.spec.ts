@@ -14,7 +14,7 @@ test.describe('Testes de Api na VR', () => {
   });
 
   test('Imprimindo um novo estabelecimento pela chave "typeOfEstablishment"', async () => {
-    const r: number = getRandomNumber(0, 56);
+    const r: number = getRandomNumber(typeOfEstablishment.lenght);
 
     expect(response).toBeOK();
     expect(response).toBeTruthy();
